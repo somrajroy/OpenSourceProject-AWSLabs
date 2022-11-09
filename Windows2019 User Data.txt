@@ -1,0 +1,36 @@
+<powershell>
+## Install IIS Web Server
+Install-WindowsFeature -name Web-Server -IncludeManagementTools
+## Change directory to wwwroot
+cd \inetpub\wwwroot
+## Delete IIS default html files
+remove-item iisstart.*
+## Grab Server info into variables
+$localipv4 = Invoke-RestMethod http://169.254.169.254/latest/meta-data/local-ipv4
+$publicipv4 = Invoke-RestMethod http://169.254.169.254/latest/meta-data/public-ipv4
+$publichostname = Invoke-RestMethod http://169.254.169.254/latest/meta-data/public-hostname
+$availabilityzone = Invoke-RestMethod http://169.254.169.254/latest/meta-data/placement/availability-zone
+$operatingsystem = (Get-CimInstance -ClassName Win32_OperatingSystem).Caption
+## Create new index.html file
+New-Item index.html
+$filename = 'index.html'
+## Write info to index.html
+Add-Content $filename "<br>"
+Add-Content $filename "<h2><b> Windows IIS Server Lab </b></h2>"
+Add-Content $filename "<b> Operating System is:</b> "
+Add-Content $filename $operatingsystem
+Add-Content $filename "<br>"
+Add-Content $filename "<b> Private IP Address is:</b> "
+Add-Content $filename $localipv4
+Add-Content $filename "<br>"
+Add-Content $filename "<b> Public IP Address is:</b> "
+Add-Content $filename $publicipv4
+Add-Content $filename "<br>"
+Add-Content $filename "<b> Public DNS Address is:</b> "
+Add-Content $filename $publichostname
+Add-Content $filename "<br>"
+Add-Content $filename "<b> Availability Zone is:</b> "
+Add-Content $filename $availabilityzone
+
+</powershell>
+<persist>true</persist>

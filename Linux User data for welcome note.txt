@@ -1,0 +1,95 @@
+Simple User Data*******
+
+#!/bin/bash
+yum install httpd -y
+echo '<h1> welcome by somraj</h1>' > /var/www/html/index.html
+chkconfig httpd on
+service httpd start
+
+**********************User data with IP Address & Availability Zone********************
+
+#!/bin/bash
+yum update -y
+yum install httpd -y
+service httpd start
+chkconfig httpd on
+cd /var/www/html
+echo "<html><body><h1> IP address of this instance: </h1>" > index.html
+curl http://169.254.169.254/latest/meta-data/public-ipv4 >> index.html
+echo " <br> <h1>Availability Zone : </h1>" >> index.html
+curl http://169.254.169.254/latest/meta-data/placement/availability-zone >> index.html
+echo "</body></html>" >> index.html
+
+*****************************multiple ports*******************************************
+#!/bin/bash
+yum update -y
+yum install httpd -y
+service httpd start
+chkconfig httpd on
+nano /etc/apache2/ports.conf
+Listen 80
+Listen 4567
+echo "<html><body><h1> IP address of this instance: </h1>" > index.html
+curl http://169.254.169.254/latest/meta-data/public-ipv4 >> index.html
+echo " <br> <h1>Availability Zone : </h1>" >> index.html
+curl http://169.254.169.254/latest/meta-data/placement/availability-zone >> index.html
+
+
+**********************User data with IP Address & Availability Zone & host name********************
+
+#!/bin/bash
+yum update -y
+yum install httpd -y
+service httpd start
+chkconfig httpd on
+cd /var/www/html
+echo "<html><body><h1> IP address of this instance: </h1>" > index.html
+curl http://169.254.169.254/latest/meta-data/public-ipv4 >> index.html
+echo " <br> <h1>Availability Zone : </h1>" >> index.html
+curl http://169.254.169.254/latest/meta-data/placement/availability-zone >> index.html
+echo " <br> <h1>Hostname : </h1>" >> index.html
+curl http://169.254.169.254/latest/meta-data/placement/hostname >> index.html
+echo "</body></html>" >> index.html
+
+
+*******************User Data with 2 pages*************************
+
+#!/bin/bash
+yum update -y
+yum install httpd -y
+service httpd start
+chkconfig httpd on
+cd /var/www/html
+echo "<html><body><h1> IP address of this instance: </h1>" > index.html
+curl http://169.254.169.254/latest/meta-data/public-ipv4 >> index.html
+echo " <br> <h1>Availability Zone : </h1>" >> index.html
+curl http://169.254.169.254/latest/meta-data/placement/availability-zone >> index.html
+echo "</body></html>" >> index.html
+
+
+*************************************************************************************
+
+#!/bin/bash
+yum install httpd -y
+chkconfig httpd on
+service httpd start
+echo "<h1> welcome from' $hostname </h1>" > /var/www/html/index.html
+echo '<h1> welcome from' $hostname '</h1>' > /var/www/html/index.html
+
+**********************************
+
+#!/bin/bash
+apt-get update
+apt-get install -y apache2
+echo "Welcome to my website" > index.html
+cp index.html /var/www/html
+
+
+**********************************
+
+(#!/bin/bash ) What exactly is this ?
+
+https://medium.com/@codingmaths/bin-bash-what-exactly-is-this-95fc8db817bf#:~:text=%2Fbin%2Fbash%20is%20the%20most,well%20developed%20and%20better%20syntax.
+
+echo IP address
+https://unix.stackexchange.com/questions/403336/problem-with-echo-ip-address

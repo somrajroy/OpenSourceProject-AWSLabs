@@ -1,4 +1,4 @@
-# This repository contains code which can be used as "user data" while creating AWS EC2 instances. <br/>
+### This repository contains code which can be used as "user data" while creating AWS EC2 instances for doing hands on Labs. <br/>
 <br/>
 * These scripts will install an httpd web server (httpd) and would display the private IP and avilability zones of the EC2 instances. <br/>
 * They are very useful while testing autoscaling/HA scenarios. A webserver will be installed and will display its AZ & IP (other required meta data can be easily added)<br/>

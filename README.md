@@ -1,5 +1,6 @@
 #### This repository contains code which can be used as "user data" while creating AWS EC2 instances for Client Demo's, POC's and doing hands on Labs. <br/>
 <br/>
+* These scripts should be used for Client Demo's, POC's and labs for setting up a scaled and load-balanced application, Demo of EC2 Auto Scaling etc.. <br/>
 * These scripts will install an Apache web server (httpd) and would display the private IP and avilability zones of the EC2 instances. <br/>
 * They are very useful while testing autoscaling/HA scenarios. A webserver will be installed and will display its AZ & IP (other required meta data can be easily added)<br/>
 * There are 3 scripts for (AWS) Linux, Windows 2016 and Windows 2019 servers <br>

@@ -10,7 +10,7 @@
 * There are 3 scripts for (AWS) Linux, Windows 2016 and Windows 2019 servers <br>
 * These scripts can be extended with minor changes and can be used for most of the hands on Labs for AWS Solution Architect certifications (SAA & SA Pro).<br/>
 
-#### Sample Architectures that can be easily built for Client Demos, POC's & Labs : <br/>
+#### Sample Architectures that can be are built for Demo's : <br/>
 
 ![image](https://user-images.githubusercontent.com/92582005/202110301-09cda5b0-4f4f-4324-b3ac-e62ad5322b65.png) <br/>
 

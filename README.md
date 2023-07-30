@@ -1,4 +1,4 @@
-#### This repository contains code which can be used as "user data" while creating AWS EC2 instances for Client Demo's, POC's and doing hands on Labs. <br/>
+#### This Open Source Terraform project is intended to be used as a template in a demonstration or to build a test/dev environment. They can be easily extended to cover other use cases or fortified for a production enviornment. This repository contains code which can be used as "user data" while creating AWS EC2 instances for Client Demo's, POC's and doing hands on Labs. <br/>
 <br/>
 * These scripts should be used for Client Demo's, POC's and labs for setting up a scaled and load-balanced application, Demo of EC2 Auto Scaling, elasticity, High availability, Load balacing etc.. <br/>
 * These scripts will install an Apache web server (httpd) and would display the private IP and avilability zones of the EC2 instances. If refreshed few times it can be seen that the load is routed to different EC2 servers in different availability zones. <br/>
